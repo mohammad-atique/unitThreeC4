@@ -47,7 +47,19 @@
     content.innerText=article.content;
 
     div.append(title,img,content);
-    main.append(div)
+    main.append(div);
+
+    let input = document.getElementById("searchbar");
+
+input.addEventListener("keypress",(e)=>{
+  if(e.key=="Enter"){
+    let input_value= input.value;
+
+    localStorage.setItem("search_term",input_value);
+
+    window.location.href="search.html"
+  }
+})
     
 
 </script>

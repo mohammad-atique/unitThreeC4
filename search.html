@@ -17,4 +17,21 @@
 </html>
 <script type="module">
 
+  import storeSearchterm from "./scripts/search.js"
+
+  import { apiCall, appendArticles } from "./scripts/main.js"
+
+  let search_term = localStorage.getItem("search_term");
+
+  // console.log(storeSearchterm)
+  let res = await storeSearchterm(` https://shrouded-earth-23381.herokuapp.com/api/search/?q=${search_term}`);
+
+  // console.log(res)
+
+  let main = document.getElementById("main");
+
+  appendArticles(res,main)
+
+
+
 </script>
