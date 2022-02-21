@@ -26,13 +26,12 @@
 <script type="module">
   import sidebar from "./components/sidebar.js";
 
-  import { apiCall, appendArticles } from "./scripts/main.js";
 
   let sidebar_div= document.getElementById("sidebar");
     sidebar_div.innerHTML=sidebar();
 
     let article= JSON.parse(localStorage.getItem("article"));
-    console.log(article);
+    // console.log(article);
 
     let main = document.getElementById("main");
     let div = document.createElement("div");
