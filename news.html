@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="/styles/main.css">
   </head>
 
   <body>
@@ -22,3 +23,31 @@
     </div>
   </body>
 </html>
+<script type="module">
+  import sidebar from "./components/sidebar.js";
+
+  import { apiCall, appendArticles } from "./scripts/main.js";
+
+  let sidebar_div= document.getElementById("sidebar");
+    sidebar_div.innerHTML=sidebar();
+
+    let article= JSON.parse(localStorage.getItem("article"));
+    console.log(article);
+
+    let main = document.getElementById("main");
+    let div = document.createElement("div");
+  div.setAttribute("id","article")
+    let title= document.createElement("p");
+    title.innerText=article.title;
+
+    let img = document.createElement("img");
+    img.src=article.urlToImage;
+
+    let content = document.createElement("p");
+    content.innerText=article.content;
+
+    div.append(title,img,content);
+    main.append(div)
+    
+
+</script>
